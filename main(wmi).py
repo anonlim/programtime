@@ -23,8 +23,7 @@ def makecsv():
     wr.writerows(df)
     f.close()    #실행할때마다 그냥 닫아줌.이게 에러 제일 덜남
     
-    
  
 shed = BlockingScheduler(timezone = 'Asia/Seoul') 
-shed.add_job(makecsv, 'interval', seconds = 30) #60초마다 위의 함수 실행
+shed.add_job(makecsv, 'interval', seconds = 10) #60초마다 위의 함수 실행
 shed.start()
